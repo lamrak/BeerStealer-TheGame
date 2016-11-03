@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">BeerStealer</string>
+    <string name="Exit">Выход</string>
+    <string name="Game">Играть</string>
+    <string name="Rules">Правила</string>
+    <string name="Stolen">Похищено кружек</string>
+    <string name="Lost">Потеряно кружек</string>
+    <string name="Ready_to_steal">Готов стырить!</string>
+    <string name="StealButton">Steal!</string>
+    <string name="Quit">Выход</string>
+    <string name="Try_again">Еще раз!</string>
+    <string name="Screenshot">Не забудь сделать скриншот своего результата!</string>
+    <string name="Hashtag">Хэштэг в соц. сетях #BeerStealer</string>
+    <string name="Game1">Играть с кнопкой Steal!</string>
+    <string name="Game2">Играть без кнопки Steal!</string>
+    <string name="Press_button">Нажмите на кнопку:</string>
+    <string name="Then_you_will_see">Появится надпись вверху экрана:</string>
+    <string name="Then_you_can_tap">Затем можете нажимать на кружку:</string>
+    <string name="You_can_lose_only">Можно потерять только пять кружек.</string>
+    <string name="Do_not_tap">Не нажимайте на кружки с темным пивом!</string>
+    <string name="Back">Назад</string>
+    <string name="banner_ad_unit_id">ca-app-pub-1516709562330550/4466084827</string>
+    <string name="Double_click_to_exit">Press once again to exit!</string>
+</resources>

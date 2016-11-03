@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/background_main">
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:text="@string/Game1"
+        android:id="@+id/button_game_one"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:onClick="onVoteClick"
+        android:background="@drawable/selector"/>
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:text="@string/Game2"
+        android:id="@+id/button_game_two"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:onClick="onVoteClick"
+        android:background="@drawable/selector"/>
+
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">BeerStealer</string>
+    <string name="Exit">Salida</string>
+    <string name="Game">Jugar</string>
+    <string name="Rules">Reglamentos</string>
+    <string name="Stolen">Robado</string>
+    <string name="Lost">Perdido</string>
+    <string name="Ready_to_steal">Listo para beber!</string>
+    <string name="StealButton">Steal!</string>
+    <string name="Quit">Salida</string>
+    <string name="Try_again">De nuevo!</string>
+    <string name="Screenshot">No se olvide de tomar una captura de pantalla de los resultados!</string>
+    <string name="Hashtag">Hashtag #BeerStealer</string>
+    <string name="Game1">Botón de activación Steal!</string>
+    <string name="Game2">Botón de apagado Steal!</string>
+    <string name="Press_button">Prensa:</string>
+    <string name="Then_you_will_see">Va a ver la inscripción en la parte superior de la pantalla:</string>
+    <string name="Then_you_can_tap">A continuación, puede hacer clic en una jarra de cerveza:</string>
+    <string name="You_can_lose_only">Usted puede perder sólo 5 cervezas.</string>
+    <string name="Do_not_tap">No haga clic en una taza con una cerveza oscura!</string>
+    <string name="Back">Retorno</string>
+    <string name="banner_ad_unit_id">ca-app-pub-1516709562330550/4466084827</string>
+    <string name="Double_click_to_exit">Press once again to exit!</string>
+</resources>

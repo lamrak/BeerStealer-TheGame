@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.maluk.tony.beerstealer.GameActivity"
+    android:background="@drawable/background_game"
+    android:orientation="vertical">
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cup_left_up"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/ic_cup_light"
+        android:onClick="onMyButtonClick"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cup_left_down"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="140dp"
+        android:background="@drawable/ic_cup_light"
+        android:onClick="onMyButtonClick"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cup_right_up"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="170dp"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/ic_cup_light"
+        android:onClick="onMyButtonClick"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cup_right_down"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="140dp"
+        android:background="@drawable/ic_cup_light"
+        android:onClick="onMyButtonClick"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Stolen"
+        android:id="@+id/score_win"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/green"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Lost"
+        android:id="@+id/score_lose"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/green"
+        android:layout_margin="5dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/arrow_left_up"
+        android:layout_marginTop="35dp"
+        android:layout_alignStart="@+id/cup_left_up"
+        android:background="@drawable/cross"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/arrow_left_down"
+        android:layout_above="@+id/cup_left_down"
+        android:layout_alignStart="@+id/cup_left_down"
+        android:background="@drawable/cross"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/arrow_right_up"
+        android:layout_marginTop="35dp"
+        android:layout_alignStart="@+id/cup_right_up"
+        android:background="@drawable/cross"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/arrow_right_down"
+        android:layout_above="@+id/cup_right_down"
+        android:layout_alignStart="@+id/cup_right_down"
+        android:background="@drawable/cross"/>
+
+</RelativeLayout>

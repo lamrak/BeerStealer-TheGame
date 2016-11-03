@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/background_game"
+    android:orientation="horizontal">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Press_button"
+        android:id="@+id/text_on_top"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:textColor="@color/beer2"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pic_steal_button"
+        android:layout_below="@+id/text_on_top"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:background="@drawable/pic1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Then_you_will_see"
+        android:id="@+id/text_under_pic_steal_button"
+        android:layout_below="@+id/pic_steal_button"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:textColor="@color/beer2"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pic_ready_to_steal"
+        android:layout_below="@+id/text_under_pic_steal_button"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:background="@drawable/pic2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Then_you_can_tap"
+        android:id="@+id/text_under_pic_ready_to_steal"
+        android:layout_below="@+id/pic_ready_to_steal"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:textColor="@color/beer2"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pic_cup"
+        android:layout_below="@+id/text_under_pic_ready_to_steal"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:background="@drawable/pic3"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/You_can_lose_only"
+            android:id="@+id/text_under_pic_cup"
+            android:layout_below="@+id/pic_cup"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:textColor="@color/beer2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Do_not_tap"
+        android:id="@+id/text_do_not_steal"
+        android:layout_below="@+id/text_under_pic_cup"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:gravity="center"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Back"
+        android:id="@+id/back_button"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:background="@drawable/selector"
+        android:textColor="@color/black" />
+    </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

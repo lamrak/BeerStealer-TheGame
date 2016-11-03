@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">BeerStealer</string>
+    <string name="Exit">Вийти</string>
+    <string name="Game">Грати</string>
+    <string name="Rules">Вказівки</string>
+    <string name="Stolen">Випив</string>
+    <string name="Lost">Втрачено</string>
+    <string name="Ready_to_steal">Готовий викрасти!</string>
+    <string name="StealButton">Steal!</string>
+    <string name="Quit">Вийти</string>
+    <string name="Try_again">Ще раз!</string>
+    <string name="Screenshot">Не забудь зробити скріншот результату!</string>
+    <string name="Hashtag">Хештег в мережах #BeerStealer</string>
+    <string name="Game1">Грати з кнопкою Steal!</string>
+    <string name="Game2">Без кнопки Steal!</string>
+    <string name="Press_button">Натисніть кнопку:</string>
+    <string name="Then_you_will_see">Побачите напис у верхній частині екрану:</string>
+    <string name="Then_you_can_tap">Потім можете натискати на кухоль:</string>
+    <string name="You_can_lose_only">Можна втратити тільки 5 кухлів.</string>
+    <string name="Do_not_tap">Не натискайте на кухлi з темним пивом!</string>
+    <string name="Back">Повернутись</string>
+    <string name="banner_ad_unit_id">ca-app-pub-1516709562330550/4466084827</string>
+    <string name="Double_click_to_exit">Press once again to exit!</string>
+</resources>

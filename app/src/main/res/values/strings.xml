@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">BeerStealer</string>
+    <string name="Exit">Exit</string>
+    <string name="Game">Game</string>
+    <string name="Rules">Rules</string>
+    <string name="Stolen">Stolen</string>
+    <string name="Lost">Lost</string>
+    <string name="Ready_to_steal">Ready to steal!</string>
+    <string name="StealButton">Steal!</string>
+    <string name="Quit">Quit</string>
+    <string name="Try_again">Try again!</string>
+    <string name="Screenshot">Do not forget to take a screenshot of your result!</string>
+    <string name="Hashtag">Social network hashtag is #BeerStealer</string>
+    <string name="Game1">Play with Steal-button</string>
+    <string name="Game2">Play without Steal-button</string>
+    <string name="Press_button">Press button:</string>
+    <string name="Then_you_will_see">Then you will see the inscription on the top:</string>
+    <string name="Then_you_can_tap">Then you can tap on cup:</string>
+    <string name="You_can_lose_only">You can lose only five cups.</string>
+    <string name="Do_not_tap">Do not tap on cup with a black beer!</string>
+    <string name="Back">Back</string>
+    <string name="banner_ad_unit_id">ca-app-pub-1516709562330550/4466084827</string>
+    <string name="Double_click_to_exit">Press once again to exit!</string>
+</resources>

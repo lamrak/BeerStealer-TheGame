@@ -1,12 +1,10 @@
 package com.maluk.tony.beerstealer;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,37 +13,16 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
-public class GameActivity extends StartActivity {
-
-    ImageButton ibtnCupLU;
-    ImageButton ibtnCupLD;
-    ImageButton ibtnCupRU;
-    ImageButton ibtnCupRD;
-    TextView tvWin;
-    TextView tvLose;
-    TextView tvTextReady;
-    ImageView ivArrowLU;
-    ImageView ivArrowLD;
-    ImageView ivArrowRU;
-    ImageView ivArrowRD;
-    ImageView ivArrowStealBtn;
-    int countWin;
-    int countLose;
-    int flagLU;
-    int flagLD;
-    int flagRU;
-    int flagRD;
-    int damageLU;
-    int damageLD;
-    int damageRU;
-    int damageRD;
-    int steal;
-    Button stButton;
+/**
+ * Created by Tony on 09.09.2016.
+ */
+public class GameTwoActivity extends GameActivity {
+    String TAG = "myLogs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+        setContentView(R.layout.activity_game_two);
 
         MobileAds.initialize(getApplicationContext(), "ca-app-pub-1516709562330550~1549644423");
         AdView mAdView = (AdView) findViewById(R.id.adView);
@@ -63,8 +40,6 @@ public class GameActivity extends StartActivity {
         ivArrowLD = (ImageView)findViewById(R.id.arrow_left_down);
         ivArrowRU = (ImageView)findViewById(R.id.arrow_right_up);
         ivArrowRD = (ImageView)findViewById(R.id.arrow_right_down);
-        ivArrowStealBtn = (ImageView)findViewById(R.id.arrow_steal_button);
-        stButton = (Button) findViewById(R.id.button);
 
         final Animation animationLU = AnimationUtils.loadAnimation(this, R.anim.transfer_left_up);
         final Animation animationLD = AnimationUtils.loadAnimation(this, R.anim.transfer_left_down);
@@ -76,7 +51,6 @@ public class GameActivity extends StartActivity {
         ivArrowLD.startAnimation(animationArrow);
         ivArrowRU.startAnimation(animationArrow);
         ivArrowRD.startAnimation(animationArrow);
-        ivArrowStealBtn.startAnimation(animationArrow);
 
         animationArrow.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -86,11 +60,10 @@ public class GameActivity extends StartActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                    ivArrowLU.setVisibility(View.INVISIBLE);
-                    ivArrowLD.setVisibility(View.INVISIBLE);
-                    ivArrowRU.setVisibility(View.INVISIBLE);
-                    ivArrowRD.setVisibility(View.INVISIBLE);
-                    ivArrowStealBtn.setVisibility(View.INVISIBLE);
+                ivArrowLU.setVisibility(View.INVISIBLE);
+                ivArrowLD.setVisibility(View.INVISIBLE);
+                ivArrowRU.setVisibility(View.INVISIBLE);
+                ivArrowRD.setVisibility(View.INVISIBLE);
             }
 
             @Override
@@ -98,7 +71,6 @@ public class GameActivity extends StartActivity {
 
             }
         });
-
         ibtnCupLU.startAnimation(animationLU);
         ibtnCupLD.startAnimation(animationLD);
         ibtnCupRU.startAnimation(animationRU);
@@ -127,6 +99,7 @@ public class GameActivity extends StartActivity {
                     ibtnCupLU.setImageResource(R.drawable.ic_cup_light);
                     damageLU = DAMAGE_NEGATIVE;
                 }
+                ibtnCupLU.setEnabled(false);
             }
 
             @Override
@@ -141,7 +114,7 @@ public class GameActivity extends StartActivity {
         animLL.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-
+                ibtnCupLU.setEnabled(true);
             }
 
             @Override
@@ -150,8 +123,7 @@ public class GameActivity extends StartActivity {
                     ibtnCupLU.setImageResource(R.drawable.ic_cup_light);
                     flagLU++;
                 }
-                else countLose++;
-                tvLose.setText(getString(R.string.Lost)+":"+countLose);
+                else countLose++;tvLose.setText(getString(R.string.Lost)+":"+countLose);
                 ibtnCupLU.startAnimation(animationLU);
             }
 
@@ -171,6 +143,7 @@ public class GameActivity extends StartActivity {
                     ibtnCupLD.setImageResource(R.drawable.ic_cup_light);
                     damageLD = DAMAGE_NEGATIVE;
                 }
+                ibtnCupLD.setEnabled(false);
             }
 
             @Override
@@ -185,6 +158,7 @@ public class GameActivity extends StartActivity {
         animLLD.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
+                ibtnCupLD.setEnabled(true);
 
             }
 
@@ -194,8 +168,7 @@ public class GameActivity extends StartActivity {
                     ibtnCupLD.setImageResource(R.drawable.ic_cup_light);
                     flagLD++;
                 }
-                else countLose++;
-                tvLose.setText(getString(R.string.Lost)+":"+countLose);
+                else countLose++;tvLose.setText(getString(R.string.Lost)+":"+countLose);
                 ibtnCupLD.startAnimation(animationLD);
             }
 
@@ -215,6 +188,7 @@ public class GameActivity extends StartActivity {
                     ibtnCupRU.setImageResource(R.drawable.ic_cup_light);
                     damageRU = DAMAGE_NEGATIVE;
                 }
+                ibtnCupRU.setEnabled(false);
             }
 
             @Override
@@ -229,16 +203,16 @@ public class GameActivity extends StartActivity {
         animLR.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
+                ibtnCupRU.setEnabled(true);
             }
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                if(flagRU % 4 == 0){
+                if(flagRU %4==0){
                     ibtnCupRU.setImageResource(R.drawable.ic_cup_light);
                     flagRU++;
                 }
-                else countLose++;
-                tvLose.setText(getString(R.string.Lost)+":"+countLose);
+                else countLose++; tvLose.setText(getString(R.string.Lost)+":"+countLose);
                 ibtnCupRU.startAnimation(animationRU);
             }
 
@@ -257,6 +231,7 @@ public class GameActivity extends StartActivity {
                     ibtnCupRD.setImageResource(R.drawable.ic_cup_light);
                     damageRD = DAMAGE_NEGATIVE;
                 }
+                ibtnCupRD.setEnabled(false);
             }
 
             @Override
@@ -271,16 +246,16 @@ public class GameActivity extends StartActivity {
         animLRD.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
+                ibtnCupRD.setEnabled(true);
             }
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                if(flagRD % 3 == 0){
+                if(flagRD %3==0){
                     ibtnCupRD.setImageResource(R.drawable.ic_cup_light);
                     flagRD++;
                 }
-                else countLose++;
-                tvLose.setText(getString(R.string.Lost)+":"+countLose);
+                else countLose++; tvLose.setText(getString(R.string.Lost)+":"+countLose);
                 ibtnCupRD.startAnimation(animationRD);
             }
 
@@ -288,43 +263,8 @@ public class GameActivity extends StartActivity {
             public void onAnimationRepeat(Animation animation) {
             }
         });
+
         if(countWin>=10){
-            animationLU.setDuration(1500);
-            animationLU.setStartOffset(100);
-            animLL.setDuration(1000);
-            animLL.setStartOffset(500);
-            animationLD.setDuration(1500);
-            animationLD.setStartOffset(500);
-            animLLD.setDuration(1000);
-            animLLD.setStartOffset(500);
-            animationRU.setDuration(1500);
-            animationRU.setStartOffset(750);
-            animLR.setDuration(1000);
-            animLR.setStartOffset(500);
-            animationRD.setDuration(1000);
-            animationRD.setStartOffset(600);
-            animLRD.setDuration(1000);
-            animLRD.setStartOffset(500);
-        }
-        if(countWin>=20){
-            animationLU.setDuration(1000);
-            animationLU.setStartOffset(100);
-            animLL.setDuration(500);
-            animLL.setStartOffset(300);
-            animationLD.setDuration(1000);
-            animationLD.setStartOffset(300);
-            animLLD.setDuration(500);
-            animLLD.setStartOffset(300);
-            animationRU.setDuration(1000);
-            animationRU.setStartOffset(400);
-            animLR.setDuration(500);
-            animLR.setStartOffset(800);
-            animationRD.setDuration(800);
-            animationRD.setStartOffset(500);
-            animLRD.setDuration(500);
-            animLRD.setStartOffset(300);
-        }
-        if(countWin>=30){
             animationLU.setDuration(1000);
             animationLU.setStartOffset(0);
             animLL.setDuration(500);
@@ -342,7 +282,7 @@ public class GameActivity extends StartActivity {
             animLRD.setDuration(500);
             animLRD.setStartOffset(100);
         }
-        if(countWin>=50){
+        if(countWin>=20){
             animationLU.setDuration(500);
             animationLU.setStartOffset(0);
             animLL.setDuration(100);
@@ -360,6 +300,25 @@ public class GameActivity extends StartActivity {
             animLRD.setDuration(100);
             animLRD.setStartOffset(0);
         }
+        if(countWin>=30){
+            animationLU.setDuration(250);
+            animationLU.setStartOffset(0);
+            animLL.setDuration(50);
+            animLL.setStartOffset(0);
+            animationLD.setDuration(400);
+            animationLD.setStartOffset(0);
+            animLLD.setDuration(50);
+            animLLD.setStartOffset(0);
+            animationRU.setDuration(250);
+            animationRU.setStartOffset(0);
+            animLR.setDuration(50);
+            animLR.setStartOffset(0);
+            animationRD.setDuration(150);
+            animationRD.setStartOffset(0);
+            animLRD.setDuration(50);
+            animLRD.setStartOffset(0);
+        }
+
         switch (view.getId()) {
             case R.id.cup_left_up:
                 countWin++;
@@ -367,10 +326,9 @@ public class GameActivity extends StartActivity {
                 ibtnCupLU.startAnimation(animationLU);
                 steal = 0;
                 flagLU++;
-                tvTextReady.setText("");
                 if(damageLU == DAMAGE_POSITIVE){
-                    Intent intent=new Intent(this,EndActivity.class);
-                    intent.putExtra("resultscore", tvWin.getText().toString());
+                    Intent intent = new Intent(this,EndTwoActivity.class);
+                    intent.putExtra("resultscore",tvWin.getText().toString());
                     startActivity(intent);finish();
                 }
                 break;
@@ -379,11 +337,10 @@ public class GameActivity extends StartActivity {
                 tvWin.setText(getString(R.string.Stolen) + ":" + countWin);
                 ibtnCupLD.startAnimation(animationLD);
                 steal = 0;
-                tvTextReady.setText("");
                 flagLD++;
                 if(damageLD == DAMAGE_POSITIVE){
-                    Intent intent=new Intent(this,EndActivity.class);
-                    intent.putExtra("resultscore", tvWin.getText().toString());
+                    Intent intent = new Intent(this,EndTwoActivity.class);
+                    intent.putExtra("resultscore",tvWin.getText().toString());
                     startActivity(intent);finish();
                 }
                 break;
@@ -392,11 +349,10 @@ public class GameActivity extends StartActivity {
                 tvWin.setText(getString(R.string.Stolen) + ":" + countWin);
                 ibtnCupRU.startAnimation(animationRU);
                 steal = 0;
-                tvTextReady.setText("");
                 flagRU++;
                 if(damageRU == DAMAGE_POSITIVE){
-                    Intent intent=new Intent(this,EndActivity.class);
-                    intent.putExtra("resultscore", tvWin.getText().toString());
+                    Intent intent = new Intent(this,EndTwoActivity.class);
+                    intent.putExtra("resultscore",tvWin.getText().toString());
                     startActivity(intent);finish();
                 }
                 break;
@@ -405,35 +361,18 @@ public class GameActivity extends StartActivity {
                 tvWin.setText(getString(R.string.Stolen) + ":" + countWin);
                 ibtnCupRD.startAnimation(animationRD);
                 steal = 0;
-                tvTextReady.setText("");
                 flagRD++;
                 if(damageRD == DAMAGE_POSITIVE){
-                    Intent intent=new Intent(this,EndActivity.class);
-                    intent.putExtra("resultscore", tvWin.getText().toString());
-                    startActivity(intent);finish();
-                }
-                break;
-            case R.id.button:
-                steal = 1;
-                tvTextReady.setText(getString(R.string.Ready_to_steal));
-                if (this.countLose>=5){
-                    Intent intent = new Intent(this,EndActivity.class);
-                    intent.putExtra("resultscore", tvWin.getText().toString());
+                    Intent intent = new Intent(this,EndTwoActivity.class);
+                    intent.putExtra("resultscore",tvWin.getText().toString());
                     startActivity(intent);finish();
                 }
                 break;
         }
-        if (steal == 1) {
-            ibtnCupLU.setEnabled(true);
-            ibtnCupLD.setEnabled(true);
-            ibtnCupRU.setEnabled(true);
-            ibtnCupRD.setEnabled(true);
-        }
-        if (steal == 0) {
-            ibtnCupLU.setEnabled(false);
-            ibtnCupLD.setEnabled(false);
-            ibtnCupRU.setEnabled(false);
-            ibtnCupRD.setEnabled(false);
+        if(countLose>=5){
+            Intent intent = new Intent(this,EndTwoActivity.class);
+            intent.putExtra("resultscore",tvWin.getText().toString());
+            startActivity(intent);finish();
         }
     }
 }
